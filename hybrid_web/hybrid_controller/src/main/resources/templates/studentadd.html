@@ -8,7 +8,9 @@
 <form action="/student/add" method="post">
   姓名：<input name="sname"/>
   年龄：<input name="age"/>
-  班级：<input name="cid"/>
+  班级：<select name="cid" >
+    <option th:each="c : ${list}" th:value="${c.id}" th:text="${c.cname}"></option>
+        </select>
     <button>增加</button>
 </form>
 </body>
