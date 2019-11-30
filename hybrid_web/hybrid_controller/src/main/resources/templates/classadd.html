@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>班级增加</title>
+</head>
+<body>
+<form action="/class/add" method="post">
+    班级名称：<input name="cname"/>
+    <input name="people" th:value="0" type="hidden"/>
+    <button>增加</button>
+</form>
+</body>
+</html>
