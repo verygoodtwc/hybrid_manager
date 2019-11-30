@@ -1,0 +1,12 @@
+server:
+  port: 80
+
+dubbo:
+  protocol:
+    port: -1
+  application:
+    name: controller
+  consumer:
+    check: false
+  registry:
+    address: zookeeper://192.168.26.123:2181
