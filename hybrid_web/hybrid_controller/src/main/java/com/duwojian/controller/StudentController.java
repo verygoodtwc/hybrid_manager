@@ -40,4 +40,17 @@ public class StudentController {
         }
         return null;
     }
+    @RequestMapping("stulist")
+    public String stulist(Model model){
+        List<StudentEntity> studentlist=studentService.stulist();
+        model.addAttribute("studentlist",studentlist);
+        return "stulist";
+    }
+    @RequestMapping("delStu")
+    public String delStu(int id){
+        studentService.delStuById(id);
+        return "redirect:/student/stulist";
+    }
+
+
 }

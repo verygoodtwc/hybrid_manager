@@ -4,7 +4,10 @@ import com.alibaba.dubbo.config.annotation.Reference;
 import com.duwojian.ClassEntity;
 import com.duwojian.service.IClassService;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+
+import java.util.List;
 
 @Controller
 @RequestMapping("class")
@@ -24,5 +27,17 @@ public class ClassController {
             return "ok";
         }
         return null;
+    }
+
+    @RequestMapping("classlist")
+    public String classlist(Model model){
+        List<ClassEntity> classList=classService.classlist();
+        model.addAttribute("classList",classList);
+        return "classlist";
+    }
+    @RequestMapping("delClass")
+    public String delClass(int id){
+        classService.delClassByid(id);
+        return "redirect:/class/classlist";
     }
 }

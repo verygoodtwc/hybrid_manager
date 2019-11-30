@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table>
+    <tr>
+
+        <td>班级</td>
+        <td>人数</td>
+        <td>操作</td>
+    </tr>
+    <tr th:each="clss : ${classList}">
+        <td th:text="${clss.cname}">学号</td>
+        <td th:text="${clss.people}">姓名</td>
+
+        <td>
+            <a th:href="|/class/delClass?id=${clss.id}|">删除班级</a>
+        </td>
+    </tr>
+</table>
+</body>
+</html>
