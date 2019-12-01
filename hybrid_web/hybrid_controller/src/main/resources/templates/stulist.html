@@ -5,7 +5,7 @@
     <title>Title</title>
 </head>
 <body>
-    <table>
+    <table border="1px">
         <tr>
             <td>学号</td>
             <td>姓名</td>
@@ -20,6 +20,7 @@
             <td th:text="${stu.classEntity.cname}">班级</td>
             <td>
                 <a th:href="|/student/delStu?id=${stu.id}|">删除学生</a>
+                <a th:href="|/student/toModifyStu?id=${stu.id}|">修改学生</a>
             </td>
         </tr>
     </table>

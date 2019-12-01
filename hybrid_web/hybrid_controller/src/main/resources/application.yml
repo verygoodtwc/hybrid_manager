@@ -8,5 +8,7 @@ dubbo:
     name: controller
   consumer:
     check: false
+    timeout: 2000
   registry:
-    address: zookeeper://192.168.50.129:2181
+    address: zookeeper://65.49.202.64:2181
+#静态资源位置

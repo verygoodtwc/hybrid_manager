@@ -13,4 +13,19 @@ public interface IClassService extends IService<ClassEntity> {
     List<ClassEntity> classlist();
 
     void delClassByid(int id);
+
+    /**
+     * 根据班级ID查询学生信息
+     * @param cid
+     * @return
+     */
+    ClassEntity selectClassById(Integer cid);
+
+    /**
+     * 修改班级人数加1
+     * @param
+     * @return
+     */
+    int updatePeopleById(ClassEntity classEntity);
+
 }

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>修改学生信息</title>
+    <script type="text/javascript" src="/templates/static/js/jquery-1.8.3.js" ></script>
+    <script type="text/javascript">
+        // alert("你好")
+
+        //查询所有的班级信息
+        // $.ajax({
+        //     type:"POST",
+        //     url:"class/classlist",
+        //     success:function (r) {
+        //         alert(r)
+        //     }
+        // })
+
+    </script>
+</head>
+<body>
+    <form action="/student/modifyStu" method="post">
+        <table>
+            <tr>
+                <td>学号</td>
+                <td><input th:value="${stu.id}" name="id" readonly="readonly" type="text"></td>
+            </tr>
+            <tr>
+                <td>姓名</td>
+                <td><input th:value="${stu.sname}" name="sname" type="text"></td>
+            </tr>
+            <tr>
+                <td>年龄</td>
+                <td><input th:value="${stu.age}" name="age" type="text"></td>
+            </tr>
+            <tr>
+                <td>班级</td><input type="hidden" name="cid0" id="cid0" th:value="${stu.cid}">
+                <td><select name="cid"  id="cid"  >
+                        <option value="1" >一年级一班</option>
+                        <option value="2" >一年级二班</option>
+                        <option value="3" >二年级一般</option>
+                    </select>
+                </td>
+            </tr>
+        </table>
+        <input type="submit" value="提交" />
+    </form>
+</body>
+</html>

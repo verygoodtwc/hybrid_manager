@@ -33,4 +33,25 @@ public class ClassServiceImpl extends ServiceImpl<ClassMapper, ClassEntity> impl
 
         studentService.delStuByCid(id);
     }
+
+    /**
+     * 根据班级ID查询班级信息
+     * @param cid
+     * @return
+     */
+    @Override
+    public ClassEntity selectClassById(Integer cid) {
+        return classMapper.selectById(cid);
+    }
+
+    /**
+     * 新班级人数加
+     * @param
+     * @return
+     */
+    @Override
+    public int updatePeopleById(ClassEntity classEntity) {
+        int i = classMapper.updateById(classEntity);
+        return i;
+    }
 }
